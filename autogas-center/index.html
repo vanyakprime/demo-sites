@@ -118,7 +118,10 @@ display: flex; flex-direction: column;
 .hero .wrap { position: relative; z-index: 2; display: flex; flex-direction: column; flex: 1; }
 .hero-top { display: flex; justify-content: space-between; align-items: center; gap: 12px; font-size: 14px; color: var(--on-ink-muted); }
 .hero-top a { text-decoration: none; }
-.hero-top > span { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.loc { min-width: 0; display: flex; flex-direction: column; line-height: 1.3; }
+.loc b { font-weight: 600; color: var(--on-ink); }
+.loc i { display: none; }
+@media (min-width: 900px) { .loc { display: block; } .loc b { font-weight: inherit; color: inherit; } .loc i { display: inline; font-style: normal; } }
 .hero-top-r { display: flex; align-items: center; gap: 14px; flex: none; }
 .btn-book {
 display: inline-flex; align-items: center; min-height: 40px; padding: 0 16px;
@@ -616,7 +619,7 @@ html { scroll-behavior: auto; }
     <path class="ln" d="M310 176 V230 Q310 250 290 250 H220"/></svg></div>
   <div class="wrap">
     <div class="hero-top">
-      <span>Алматы · Турксибский район</span>
+      <span class="loc"><b>Алматы</b><i> · </i><span>Турксибский район</span></span>
       <div class="hero-top-r">
         <a href="#reviews">★ 4,9</a>
         <a class="btn-book" href="#cta" data-booking>Записаться</a>
