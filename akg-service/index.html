@@ -71,6 +71,11 @@ padding-bottom: 76px;
 img { display: block; max-width: 100%; height: auto; }
 a { color: inherit; }
 .wrap { width: 100%; max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+@media (min-width: 1100px) {
+.wrap, .gallery-nav,
+.gallery.g-1 .gallery-track, .gallery.g-2 .gallery-track { max-width: 1440px; padding-left: clamp(28px, 4vw, 64px); padding-right: clamp(28px, 4vw, 64px); }
+.gallery:not(.g-1):not(.g-2) .gallery-track { padding: 0 max(clamp(28px, 4vw, 64px), calc((100% - 1440px) / 2 + clamp(28px, 4vw, 64px))); scroll-padding: 0 max(clamp(28px, 4vw, 64px), calc((100% - 1440px) / 2 + clamp(28px, 4vw, 64px))); }
+}
 .display {
 font-family: Bahnschrift, "DIN Condensed", "Roboto Condensed", "Arial Narrow", sans-serif-condensed, sans-serif;
 font-stretch: condensed;
@@ -167,10 +172,10 @@ border-top: 4px solid var(--accent); transition: transform .2s ease;
 @media (hover: hover) { .about-facts div:hover { transform: translateY(-3px); } }
 @media (max-width: 899px) { .about-facts div:last-child:nth-child(odd) { grid-column: 1 / -1; } }
 @media (min-width: 900px) {
-.about .wrap { max-width: 1280px; }
-.about-grid { grid-template-columns: minmax(0, .85fr) minmax(0, 1.4fr); gap: 56px; align-items: center; }
-.about-facts { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 1fr; gap: 14px; }
-.about-facts div { min-height: 150px; padding: 24px 20px; display: flex; flex-direction: column; justify-content: space-between; }
+.about-grid { grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 64px; align-items: start; }
+.about-facts { grid-template-columns: 1fr; gap: 12px; }
+.about-facts div { border-top: 0; border-left: 4px solid var(--accent); padding: 18px 22px; }
+.about-facts dt { margin-bottom: 6px; }
 .about-facts dd { font-size: 19px; }
 .services-list { columns: 2; column-gap: 48px; }
 .services-list li { break-inside: avoid; }
@@ -364,6 +369,7 @@ border: 1px solid var(--line-ink); background: transparent; color: var(--on-ink)
 .gallery.g-1 .gallery-track { grid-auto-columns: 100%; }
 @media (min-width: 768px) {
 .gallery.g-1 .gallery-track, .gallery.g-2 .gallery-track { grid-auto-columns: auto; grid-auto-flow: row; overflow: visible; max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+@media (min-width: 1100px) { .gallery.g-1 .gallery-track, .gallery.g-2 .gallery-track { max-width: 1440px; padding: 0 clamp(28px, 4vw, 64px); } }
 .gallery.g-1 .gallery-track { grid-template-columns: 1fr; }
 .gallery.g-1 img { aspect-ratio: 21 / 8; }
 .gallery.g-2 .gallery-track { grid-template-columns: 1fr 1fr; }
