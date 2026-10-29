@@ -237,7 +237,7 @@ will-change: transform;
 @keyframes swing { 0%, 100% { transform: rotate(-30deg); } 50% { transform: rotate(40deg); } }
 @keyframes sweep { to { transform: translateX(-60px); } }
 @media (min-width: 900px) {
-.hero.no-photo { padding: 28px 0 56px; min-height: 88vh; min-height: 88svh; }
+.hero.no-photo { padding: 28px 0 56px; min-height: calc(100vh - 46px); min-height: calc(100svh - 46px); }
 .no-photo .wrap { position: relative; }
 .no-photo .hero-top { position: static; padding: 0; }
 .no-photo .hero-main { margin-top: auto; padding-top: 48px; max-width: 560px; }
@@ -245,7 +245,7 @@ will-change: transform;
 .art-svg { height: auto; }
 }
 .ticker { overflow: hidden; background: var(--accent); color: var(--on-accent); border-block: 2px solid var(--ink); }
-.ticker-track { display: flex; width: max-content; animation: run 38s linear infinite; }
+.ticker-track { display: flex; width: max-content; animation: run var(--dur, 38s) linear infinite; }
 .ticker span {
 padding: 12px 0; white-space: nowrap;
 font: 700 17px/1 Bahnschrift, "Roboto Condensed", "Arial Narrow", sans-serif;
@@ -545,7 +545,7 @@ html { scroll-behavior: auto; }
 
 
 <div class="ticker" aria-hidden="true">
-  <div class="ticker-track"><span>Ремонт выхлопных систем</span><span>Сварочные работы</span><span>Замена масла</span><span>Ремонт выхлопных систем</span><span>Сварочные работы</span><span>Замена масла</span></div>
+  <div class="ticker-track" style="--dur:68s"><span>Ремонт выхлопных систем</span><span>Сварочные работы</span><span>Замена масла</span><span>Ремонт выхлопных систем</span><span>Сварочные работы</span><span>Замена масла</span><span>Ремонт выхлопных систем</span><span>Сварочные работы</span><span>Замена масла</span><span>Ремонт выхлопных систем</span><span>Сварочные работы</span><span>Замена масла</span><span>Ремонт выхлопных систем</span><span>Сварочные работы</span><span>Замена масла</span><span>Ремонт выхлопных систем</span><span>Сварочные работы</span><span>Замена масла</span><span>Ремонт выхлопных систем</span><span>Сварочные работы</span><span>Замена масла</span><span>Ремонт выхлопных систем</span><span>Сварочные работы</span><span>Замена масла</span><span>Ремонт выхлопных систем</span><span>Сварочные работы</span><span>Замена масла</span><span>Ремонт выхлопных систем</span><span>Сварочные работы</span><span>Замена масла</span></div>
 </div>
 
 
