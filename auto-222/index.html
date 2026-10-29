@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex,nofollow">
 <title>222 — автосервис, улица Тлендиева, 222, Алматы</title>
-<meta name="description" content="Двигатель, ходовая, выхлоп и автозвук. Работают с машинами больше 80 марок.">
+<meta name="description" content="Двигатели, ходовая, электрика, развал-схождение, выхлоп и автозвук. Работают с машинами больше 80 марок.">
 <meta name="theme-color" content="#131518">
 <script>document.documentElement.className = "js";</script>
 <style>
@@ -145,9 +145,27 @@ animation: aurora 18s ease-in-out infinite alternate;
 @keyframes aurora { to { transform: translate(-6%, 5%) scale(1.08); } }
 .hero-main { margin-top: auto; padding-top: 48px; }
 .hero .kicker { color: var(--accent); }
-.hero h1 { margin: 0; font-size: clamp(34px, calc((100vw - 48px) / (var(--fit, 8) * .66)), 80px); overflow-wrap: normal; hyphens: manual; }
+.hero h1 { margin: 0; font-size: clamp(32px, calc((100vw - 48px) / (var(--fit, 8) * .66)), 64px); overflow-wrap: normal; hyphens: manual; }
 @media (min-width: 900px) { .hero h1 { font-size: clamp(48px, calc(540px / (var(--fit, 8) * .62)), 120px); } }
 .hero .lead { margin: 18px 0 0; max-width: 34ch; font-size: 18px; color: var(--on-ink); }
+.dirs { list-style: none; display: flex; flex-wrap: wrap; gap: 6px; margin: 16px 0 0; padding: 0; max-width: 560px; }
+.dirs li {
+padding: 5px 11px; border-radius: 999px; font-size: 13px; font-weight: 600;
+border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent); color: var(--on-ink);
+background: color-mix(in srgb, var(--accent) 10%, transparent);
+}
+.about { padding-bottom: 24px; }
+.about-grid { display: grid; gap: 28px; }
+.about-text { margin: 0; font-size: 18px; line-height: 1.6; max-width: 60ch; }
+.about-facts { margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.about-facts div { background: var(--paper-2); border-radius: 6px; padding: 14px 16px; }
+.about-facts dt { font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--accent-ink); margin-bottom: 6px; }
+.about-facts dd { margin: 0; font-weight: 600; font-size: 15px; line-height: 1.4; }
+@media (min-width: 900px) {
+.about-grid { grid-template-columns: 1.1fr 1fr; gap: 56px; align-items: start; }
+.services-list { columns: 2; column-gap: 48px; }
+.services-list li { break-inside: avoid; }
+}
 .status {
 display: inline-flex; align-items: center; gap: 8px;
 margin: 22px 0 0; padding: 6px 12px 6px 10px;
@@ -206,6 +224,8 @@ will-change: transform;
 .art-svg .rise { animation: rise 6s linear infinite; }
 .art-svg .pulse { animation: pulse 5s ease-in-out infinite; transform-origin: 220px 160px; }
 @keyframes flow { to { stroke-dashoffset: -52; } }
+.art-svg .piston { animation: piston 1.1s ease-in-out infinite; }
+@keyframes piston { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(22px); } }
 @keyframes drift2 { 0%, 100% { transform: translate(0, 0) rotate(0); opacity: .9; } 50% { transform: translate(10px, -12px) rotate(60deg); opacity: .4; } }
 @keyframes slats { 0%, 100% { transform: skewY(0); } 50% { transform: skewY(-4deg); } }
 @keyframes rise { 0% { transform: translateY(0); opacity: 0; } 15% { opacity: .9; } 100% { transform: translateY(-120px); opacity: 0; } }
@@ -241,7 +261,7 @@ will-change: transform;
 .no-photo .wrap { position: relative; max-width: none; padding: 0 clamp(28px, 5vw, 110px); }
 .no-photo .hero-top { position: static; padding: 0; }
 .no-photo .hero-main { margin: auto 0; padding: 32px 0 32px 28px; max-width: min(48vw, 760px); border-left-width: 5px; }
-.no-photo h1 { font-size: clamp(60px, calc(min(44vw, 700px) / (var(--fit, 8) * .6)), 176px); }
+.no-photo h1 { font-size: clamp(52px, calc(min(40vw, 620px) / (var(--fit, 8) * .6)), 132px); }
 .no-photo .kicker { font-size: 15px; margin-bottom: 18px; }
 .no-photo .lead { font-size: clamp(19px, 1.35vw, 24px); max-width: 36ch; margin-top: 22px; }
 .no-photo .status { font-size: 15px; margin-top: 26px; }
@@ -250,6 +270,18 @@ will-change: transform;
 .no-photo .actions .btn { min-height: 62px; font-size: 18px; }
 .hero-art { position: absolute; top: 50%; right: 5vw; width: 44vw; max-width: 860px; height: auto; max-height: none; min-height: 0; margin: 0; transform: translateY(-46%); }
 .art-svg { height: auto; }
+}
+@media (min-width: 900px) and (max-height: 780px) {
+.hero.no-photo { padding: 14px 0 18px; }
+.no-photo .hero-main { padding-top: 6px; padding-bottom: 6px; }
+.no-photo h1 { font-size: min(clamp(48px, calc(min(40vw, 620px) / (var(--fit, 8) * .6)), 120px), 11vh); }
+.no-photo .lead { font-size: 16px; line-height: 1.45; margin-top: 10px; }
+.no-photo .dirs { margin-top: 10px; gap: 5px; }
+.no-photo .dirs li { padding: 3px 9px; font-size: 12px; }
+.no-photo .status { margin-top: 10px; padding-top: 4px; padding-bottom: 4px; }
+.no-photo .phone-big { margin: 8px 0 10px; }
+.no-photo .actions .btn { min-height: 48px; }
+.no-photo .wa-link { margin-top: 6px; }
 }
 @media (min-width: 900px) and (max-width: 1499px) {
 .no-photo .hero-main { max-width: 44vw; }
@@ -262,7 +294,8 @@ will-change: transform;
 @media (min-width: 900px) and (max-height: 900px) {
 .hero.no-photo { padding: 20px 0 28px; }
 .no-photo .hero-main { padding-top: 16px; padding-bottom: 16px; }
-.no-photo h1 { font-size: min(clamp(60px, calc(min(44vw, 700px) / (var(--fit, 8) * .6)), 176px), 14vh); }
+.no-photo h1 { font-size: min(clamp(52px, calc(min(40vw, 620px) / (var(--fit, 8) * .6)), 132px), 12vh); }
+.no-photo .dirs { margin-top: 14px; }
 .no-photo .kicker { margin-bottom: 10px; }
 .no-photo .lead { margin-top: 14px; font-size: clamp(17px, 2.2vh, 21px); }
 .no-photo .status { margin-top: 16px; }
@@ -576,7 +609,8 @@ html { scroll-behavior: auto; }
     <div class="hero-main">
       <p class="kicker">Автосервис</p>
       <h1 class="display" style="--fit:3">222</h1>
-      <p class="lead">Двигатель, ходовая, выхлоп и автозвук. Работают с машинами больше 80 марок.</p>
+      <p class="lead">Двигатели, ходовая, электрика, развал-схождение, выхлоп и автозвук. Работают с машинами больше 80 марок.</p>
+      <ul class="dirs"><li>Двигатели</li><li>Ходовая</li><li>Электрика</li><li>Развал-схождение</li><li>Автозвук</li></ul>
       <p class="status" data-status hidden></p>
       <a class="phone-big display" href="tel:+77017207001">+7 701 720-70-01</a>
       <div class="actions">
@@ -590,7 +624,7 @@ html { scroll-behavior: auto; }
 
 
 <div class="ticker" aria-hidden="true">
-  <div class="ticker-track" style="--dur:81s"><span>Ремонт двигателя</span><span>Ремонт ходовой части</span><span>Тюнинг выхлопной системы</span><span>Установка и ремонт автозвука</span><span>Общий авторемонт</span><span>Ремонт двигателя</span><span>Ремонт ходовой части</span><span>Тюнинг выхлопной системы</span><span>Установка и ремонт автозвука</span><span>Общий авторемонт</span><span>Ремонт двигателя</span><span>Ремонт ходовой части</span><span>Тюнинг выхлопной системы</span><span>Установка и ремонт автозвука</span><span>Общий авторемонт</span><span>Ремонт двигателя</span><span>Ремонт ходовой части</span><span>Тюнинг выхлопной системы</span><span>Установка и ремонт автозвука</span><span>Общий авторемонт</span><span>Ремонт двигателя</span><span>Ремонт ходовой части</span><span>Тюнинг выхлопной системы</span><span>Установка и ремонт автозвука</span><span>Общий авторемонт</span><span>Ремонт двигателя</span><span>Ремонт ходовой части</span><span>Тюнинг выхлопной системы</span><span>Установка и ремонт автозвука</span><span>Общий авторемонт</span></div>
+  <div class="ticker-track" style="--dur:94s"><span>Ремонт бензиновых двигателей</span><span>Ремонт дизельных двигателей</span><span>Ремонт ходовой части</span><span>Ремонт пневмоподвески</span><span>Ремонт стоек</span><span>Проточка тормозных дисков</span><span>Расточка и гильзовка</span><span>Опрессовка</span><span>Развал-схождение</span><span>Компьютерная диагностика</span><span>Ремонт электронных систем авто</span><span>Ремонт стартеров и генераторов</span><span>Ремонт и тюнинг выхлопных систем</span><span>Ультразвуковая мойка деталей</span><span>Установка и ремонт автозвука</span><span>Адаптация ТВ и радио</span><span>Ремонт бензиновых двигателей</span><span>Ремонт дизельных двигателей</span><span>Ремонт ходовой части</span><span>Ремонт пневмоподвески</span><span>Ремонт стоек</span><span>Проточка тормозных дисков</span><span>Расточка и гильзовка</span><span>Опрессовка</span><span>Развал-схождение</span><span>Компьютерная диагностика</span><span>Ремонт электронных систем авто</span><span>Ремонт стартеров и генераторов</span><span>Ремонт и тюнинг выхлопных систем</span><span>Ультразвуковая мойка деталей</span><span>Установка и ремонт автозвука</span><span>Адаптация ТВ и радио</span></div>
 </div>
 
 
@@ -608,11 +642,26 @@ html { scroll-behavior: auto; }
 
 <main>
 
+<section class="about" id="about">
+  <div class="wrap about-grid">
+    <div>
+      <h2 class="display">О сервисе</h2>
+      <p class="about-text">Автосервис «222» принимает на улице Тлендиева в Алмалинском районе Алматы. Здесь ремонтируют бензиновые и дизельные двигатели, ходовую, электрику, стартеры и генераторы, делают диагностику и развал-схождение. Отдельно занимаются выхлопными системами и автозвуком. Работают с машинами более 80 марок.</p>
+    </div>
+    
+    <dl class="about-facts">
+      <div><dt>Рейтинг</dt><dd>5,0 по 132 оценкам в 2ГИС</dd></div><div><dt>Марки</dt><dd>Более 80</dd></div><div><dt>Оплата</dt><dd>Наличные, перевод с карты, QR-код</dd></div><div><dt>Удобства</dt><dd>Парковка на 5 мест</dd></div>
+    </dl>
+    
+  </div>
+</section>
+
+
 <section class="services" id="services">
   <div class="wrap">
     <h2 class="display">Услуги</h2>
     <ul class="services-list">
-      <li><span class="svc-name">Ремонт двигателя</span></li><li><span class="svc-name">Ремонт ходовой части</span></li><li><span class="svc-name">Тюнинг выхлопной системы</span></li><li><span class="svc-name">Установка и ремонт автозвука</span></li><li><span class="svc-name">Общий авторемонт</span></li>
+      <li><span class="svc-name">Ремонт бензиновых двигателей</span></li><li><span class="svc-name">Ремонт дизельных двигателей</span></li><li><span class="svc-name">Ремонт ходовой части</span></li><li><span class="svc-name">Ремонт пневмоподвески</span></li><li><span class="svc-name">Ремонт стоек</span></li><li><span class="svc-name">Проточка тормозных дисков</span></li><li><span class="svc-name">Расточка и гильзовка</span></li><li><span class="svc-name">Опрессовка</span></li><li><span class="svc-name">Развал-схождение</span></li><li><span class="svc-name">Компьютерная диагностика</span></li><li><span class="svc-name">Ремонт электронных систем авто</span></li><li><span class="svc-name">Ремонт стартеров и генераторов</span></li><li><span class="svc-name">Ремонт и тюнинг выхлопных систем</span></li><li><span class="svc-name">Ультразвуковая мойка деталей</span></li><li><span class="svc-name">Установка и ремонт автозвука</span></li><li><span class="svc-name">Адаптация ТВ и радио</span></li>
     </ul>
     <p class="price-note"><span>Цена зависит от машины и объёма работ. Назовём после осмотра или по телефону: <a href="tel:+77017207001">+7 701 720-70-01</a></span></p>
   </div>
@@ -768,7 +817,7 @@ html { scroll-behavior: auto; }
       <label class="fld"><span>Машина</span><input name="car" placeholder="Марка, модель, год"></label>
       
       <label class="fld"><span>Что нужно</span>
-        <select name="service"><option value="">Выберите услугу</option><option>Ремонт двигателя</option><option>Ремонт ходовой части</option><option>Тюнинг выхлопной системы</option><option>Установка и ремонт автозвука</option><option>Общий авторемонт</option><option>Другое, расскажу по телефону</option></select>
+        <select name="service"><option value="">Выберите услугу</option><option>Ремонт бензиновых двигателей</option><option>Ремонт дизельных двигателей</option><option>Ремонт ходовой части</option><option>Ремонт пневмоподвески</option><option>Ремонт стоек</option><option>Проточка тормозных дисков</option><option>Расточка и гильзовка</option><option>Опрессовка</option><option>Развал-схождение</option><option>Компьютерная диагностика</option><option>Ремонт электронных систем авто</option><option>Ремонт стартеров и генераторов</option><option>Ремонт и тюнинг выхлопных систем</option><option>Ультразвуковая мойка деталей</option><option>Установка и ремонт автозвука</option><option>Адаптация ТВ и радио</option><option>Другое, расскажу по телефону</option></select>
       </label>
       
       <div class="slots" data-slots hidden>

@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex,nofollow">
-<title>AMC — автосервис, Подвойского улица, 1, Алматы</title>
-<meta name="description" content="Двигатели бензиновые и дизельные, ходовая, выхлоп и компьютерная диагностика. Работают без выходных до 21:00.">
+<title>AMC — ремонт двигателей, Подвойского улица, 1, Алматы</title>
+<meta name="description" content="Бензиновые и дизельные двигатели, выхлопные системы, ходовая и компьютерная диагностика. Работают без выходных до 21:00.">
 <meta name="theme-color" content="#111312">
 <script>document.documentElement.className = "js";</script>
 <style>
@@ -145,9 +145,27 @@ animation: aurora 18s ease-in-out infinite alternate;
 @keyframes aurora { to { transform: translate(-6%, 5%) scale(1.08); } }
 .hero-main { margin-top: auto; padding-top: 48px; }
 .hero .kicker { color: var(--accent); }
-.hero h1 { margin: 0; font-size: clamp(34px, calc((100vw - 48px) / (var(--fit, 8) * .66)), 80px); overflow-wrap: normal; hyphens: manual; }
+.hero h1 { margin: 0; font-size: clamp(32px, calc((100vw - 48px) / (var(--fit, 8) * .66)), 64px); overflow-wrap: normal; hyphens: manual; }
 @media (min-width: 900px) { .hero h1 { font-size: clamp(48px, calc(540px / (var(--fit, 8) * .62)), 120px); } }
 .hero .lead { margin: 18px 0 0; max-width: 34ch; font-size: 18px; color: var(--on-ink); }
+.dirs { list-style: none; display: flex; flex-wrap: wrap; gap: 6px; margin: 16px 0 0; padding: 0; max-width: 560px; }
+.dirs li {
+padding: 5px 11px; border-radius: 999px; font-size: 13px; font-weight: 600;
+border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent); color: var(--on-ink);
+background: color-mix(in srgb, var(--accent) 10%, transparent);
+}
+.about { padding-bottom: 24px; }
+.about-grid { display: grid; gap: 28px; }
+.about-text { margin: 0; font-size: 18px; line-height: 1.6; max-width: 60ch; }
+.about-facts { margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.about-facts div { background: var(--paper-2); border-radius: 6px; padding: 14px 16px; }
+.about-facts dt { font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--accent-ink); margin-bottom: 6px; }
+.about-facts dd { margin: 0; font-weight: 600; font-size: 15px; line-height: 1.4; }
+@media (min-width: 900px) {
+.about-grid { grid-template-columns: 1.1fr 1fr; gap: 56px; align-items: start; }
+.services-list { columns: 2; column-gap: 48px; }
+.services-list li { break-inside: avoid; }
+}
 .status {
 display: inline-flex; align-items: center; gap: 8px;
 margin: 22px 0 0; padding: 6px 12px 6px 10px;
@@ -206,6 +224,8 @@ will-change: transform;
 .art-svg .rise { animation: rise 6s linear infinite; }
 .art-svg .pulse { animation: pulse 5s ease-in-out infinite; transform-origin: 220px 160px; }
 @keyframes flow { to { stroke-dashoffset: -52; } }
+.art-svg .piston { animation: piston 1.1s ease-in-out infinite; }
+@keyframes piston { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(22px); } }
 @keyframes drift2 { 0%, 100% { transform: translate(0, 0) rotate(0); opacity: .9; } 50% { transform: translate(10px, -12px) rotate(60deg); opacity: .4; } }
 @keyframes slats { 0%, 100% { transform: skewY(0); } 50% { transform: skewY(-4deg); } }
 @keyframes rise { 0% { transform: translateY(0); opacity: 0; } 15% { opacity: .9; } 100% { transform: translateY(-120px); opacity: 0; } }
@@ -241,7 +261,7 @@ will-change: transform;
 .no-photo .wrap { position: relative; max-width: none; padding: 0 clamp(28px, 5vw, 110px); }
 .no-photo .hero-top { position: static; padding: 0; }
 .no-photo .hero-main { margin: auto 0; padding: 32px 0 32px 28px; max-width: min(48vw, 760px); border-left-width: 5px; }
-.no-photo h1 { font-size: clamp(60px, calc(min(44vw, 700px) / (var(--fit, 8) * .6)), 176px); }
+.no-photo h1 { font-size: clamp(52px, calc(min(40vw, 620px) / (var(--fit, 8) * .6)), 132px); }
 .no-photo .kicker { font-size: 15px; margin-bottom: 18px; }
 .no-photo .lead { font-size: clamp(19px, 1.35vw, 24px); max-width: 36ch; margin-top: 22px; }
 .no-photo .status { font-size: 15px; margin-top: 26px; }
@@ -250,6 +270,18 @@ will-change: transform;
 .no-photo .actions .btn { min-height: 62px; font-size: 18px; }
 .hero-art { position: absolute; top: 50%; right: 5vw; width: 44vw; max-width: 860px; height: auto; max-height: none; min-height: 0; margin: 0; transform: translateY(-46%); }
 .art-svg { height: auto; }
+}
+@media (min-width: 900px) and (max-height: 780px) {
+.hero.no-photo { padding: 14px 0 18px; }
+.no-photo .hero-main { padding-top: 6px; padding-bottom: 6px; }
+.no-photo h1 { font-size: min(clamp(48px, calc(min(40vw, 620px) / (var(--fit, 8) * .6)), 120px), 11vh); }
+.no-photo .lead { font-size: 16px; line-height: 1.45; margin-top: 10px; }
+.no-photo .dirs { margin-top: 10px; gap: 5px; }
+.no-photo .dirs li { padding: 3px 9px; font-size: 12px; }
+.no-photo .status { margin-top: 10px; padding-top: 4px; padding-bottom: 4px; }
+.no-photo .phone-big { margin: 8px 0 10px; }
+.no-photo .actions .btn { min-height: 48px; }
+.no-photo .wa-link { margin-top: 6px; }
 }
 @media (min-width: 900px) and (max-width: 1499px) {
 .no-photo .hero-main { max-width: 44vw; }
@@ -262,7 +294,8 @@ will-change: transform;
 @media (min-width: 900px) and (max-height: 900px) {
 .hero.no-photo { padding: 20px 0 28px; }
 .no-photo .hero-main { padding-top: 16px; padding-bottom: 16px; }
-.no-photo h1 { font-size: min(clamp(60px, calc(min(44vw, 700px) / (var(--fit, 8) * .6)), 176px), 14vh); }
+.no-photo h1 { font-size: min(clamp(52px, calc(min(40vw, 620px) / (var(--fit, 8) * .6)), 132px), 12vh); }
+.no-photo .dirs { margin-top: 14px; }
 .no-photo .kicker { margin-bottom: 10px; }
 .no-photo .lead { margin-top: 14px; font-size: clamp(17px, 2.2vh, 21px); }
 .no-photo .status { margin-top: 16px; }
@@ -529,10 +562,10 @@ html { scroll-behavior: auto; }
 </head>
 <body class="t-volt">
 
-<header class="hero no-photo" style="--doodle:url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22200%22%20height%3D%22200%22%20viewBox%3D%220%200%20200%20200%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%23d7f23a%22%20stroke-opacity%3D%22.17%22%20stroke-width%3D%221.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cg%20transform%3D%22translate(18%2014)%20rotate(-18%2012%2012)%22%3E%3Cpath%20d%3D%22M13%202%204%2014h7l-1%208%209-12h-7z%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22translate(92%2026)%20rotate(12%2012%2012)%22%3E%3Cpath%20d%3D%22M2%2016v-3.5L4.5%208h11l3.5%204.5H22V16z%22%2F%3E%3Ccircle%20cx%3D%227%22%20cy%3D%2216.5%22%20r%3D%222.2%22%2F%3E%3Ccircle%20cx%3D%2217%22%20cy%3D%2216.5%22%20r%3D%222.2%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22translate(160%208)%20rotate(30%2012%2012)%22%3E%3Cpath%20d%3D%22M10%202h4v4h-4zM8.5%206h7v5h-7zM11%2011h2v6h-2zM12%2017v4M10%2021h4%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22translate(6%2092)%20rotate(40%2012%2012)%22%3E%3Cpath%20d%3D%22M14.7%206.3a4%204%200%200%200-5.4%205.4L3%2018l3%203%206.3-6.3a4%204%200%200%200%205.4-5.4l-2.6%202.6-2.4-.6-.6-2.4z%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22translate(80%2098)%20rotate(-10%2012%2012)%22%3E%3Cpath%20d%3D%22M13%202%204%2014h7l-1%208%209-12h-7z%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22translate(150%2084)%20rotate(-28%2012%2012)%22%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%2212%22%20r%3D%229%22%2F%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%2212%22%20r%3D%224%22%2F%3E%3Cpath%20d%3D%22M12%203v5M12%2016v5M3%2012h5M16%2012h5%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22translate(34%20160)%20rotate(8%2012%2012)%22%3E%3Cpath%20d%3D%22M13%202%204%2014h7l-1%208%209-12h-7z%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22translate(108%20168)%20rotate(-34%2012%2012)%22%3E%3Cpath%20d%3D%22M10%202h4v4h-4zM8.5%206h7v5h-7zM11%2011h2v6h-2zM12%2017v4M10%2021h4%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22translate(170%20152)%20rotate(20%2012%2012)%22%3E%3Cpath%20d%3D%22M10%202h4v4h-4zM8.5%206h7v5h-7zM11%2011h2v6h-2zM12%2017v4M10%2021h4%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E')">
+<header class="hero no-photo" style="--doodle:url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22200%22%20height%3D%22200%22%20viewBox%3D%220%200%20200%20200%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%23d7f23a%22%20stroke-opacity%3D%22.17%22%20stroke-width%3D%221.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cg%20transform%3D%22translate(18%2014)%20rotate(-18%2012%2012)%22%3E%3Cpath%20d%3D%22M7%203h10v8H7zM7%206h10M12%2011v4M9%2015h6l-1%206h-4z%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22translate(92%2026)%20rotate(12%2012%2012)%22%3E%3Cpath%20d%3D%22M2%2016v-3.5L4.5%208h11l3.5%204.5H22V16z%22%2F%3E%3Ccircle%20cx%3D%227%22%20cy%3D%2216.5%22%20r%3D%222.2%22%2F%3E%3Ccircle%20cx%3D%2217%22%20cy%3D%2216.5%22%20r%3D%222.2%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22translate(160%208)%20rotate(30%2012%2012)%22%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%2212%22%20r%3D%227%22%20stroke-dasharray%3D%222.6%202.2%22%20stroke-width%3D%223.2%22%2F%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%2212%22%20r%3D%222.6%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22translate(6%2092)%20rotate(40%2012%2012)%22%3E%3Cpath%20d%3D%22M14.7%206.3a4%204%200%200%200-5.4%205.4L3%2018l3%203%206.3-6.3a4%204%200%200%200%205.4-5.4l-2.6%202.6-2.4-.6-.6-2.4z%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22translate(80%2098)%20rotate(-10%2012%2012)%22%3E%3Cpath%20d%3D%22M10%202h4v4h-4zM8.5%206h7v5h-7zM11%2011h2v6h-2zM12%2017v4M10%2021h4%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22translate(150%2084)%20rotate(-28%2012%2012)%22%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%2212%22%20r%3D%229%22%2F%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%2212%22%20r%3D%224%22%2F%3E%3Cpath%20d%3D%22M12%203v5M12%2016v5M3%2012h5M16%2012h5%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22translate(34%20160)%20rotate(8%2012%2012)%22%3E%3Cpath%20d%3D%22M7%203h10v8H7zM7%206h10M12%2011v4M9%2015h6l-1%206h-4z%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22translate(108%20168)%20rotate(-34%2012%2012)%22%3E%3Cpath%20d%3D%22M10%202h4v4h-4zM8.5%206h7v5h-7zM11%2011h2v6h-2zM12%2017v4M10%2021h4%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22translate(170%20152)%20rotate(20%2012%2012)%22%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%2212%22%20r%3D%227%22%20stroke-dasharray%3D%222.6%202.2%22%20stroke-width%3D%223.2%22%2F%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%2212%22%20r%3D%222.6%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E')">
   <div class="streaks" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
   
-  <div class="hero-art"><svg class="art-svg art-electric" viewBox="0 0 400 320" preserveAspectRatio="xMidYMid meet" role="img" aria-hidden="true">
+  <div class="hero-art"><svg class="art-svg art-engine" viewBox="0 0 400 320" preserveAspectRatio="xMidYMid meet" role="img" aria-hidden="true">
   <defs>
     <radialGradient id="glow-a"><stop offset="0" style="stop-color:var(--accent);stop-opacity:.34"/><stop offset=".55" style="stop-color:var(--accent);stop-opacity:.08"/><stop offset="1" style="stop-color:var(--accent);stop-opacity:0"/></radialGradient>
     <linearGradient id="artBody" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:color-mix(in srgb, var(--on-ink) 16%, var(--ink-2))"/><stop offset="1" style="stop-color:var(--ink)"/></linearGradient>
@@ -540,12 +573,25 @@ html { scroll-behavior: auto; }
   <circle cx="220" cy="160" r="190" fill="url(#glow-a)" class="pulse"/>
   <ellipse cx="200" cy="300" rx="170" ry="12" fill="#000" opacity=".35"/>
   <circle cx="40" cy="250" r="2.4" class="ac rise" style="animation-delay:0s"/><circle cx="90" cy="60" r="2.4" class="ac rise" style="animation-delay:1.6s"/><circle cx="360" cy="40" r="2.4" class="ac rise" style="animation-delay:3.1s"/><circle cx="380" cy="220" r="2.4" class="ac rise" style="animation-delay:0.8s"/><circle cx="20" cy="140" r="2.4" class="ac rise" style="animation-delay:2.4s"/><circle cx="300" cy="300" r="2.4" class="ac rise" style="animation-delay:4s"/>
-    <rect x="40" y="130" width="230" height="150" rx="14" class="dk ln"/>
-    <rect x="72" y="108" width="40" height="22" rx="4" class="ln dk"/>
-    <rect x="198" y="108" width="40" height="22" rx="4" class="ln dk"/>
-    <path class="as" stroke-width="8" d="M78 190 h28 M92 176 v28 M204 190 h28"/>
-    <path class="lt" d="M60 236 H250"/>
-    <path class="ac blink" d="M300 10 L216 168 L276 168 L238 312 L372 128 L304 128 L352 10 Z"/></svg></div>
+    <path class="as flow" stroke-width="5" d="M330 96 L338 214 M352 214 L344 96" style="stroke-dasharray:10 8"/>
+    <rect x="58" y="78" width="250" height="52" rx="12" class="dk ln"/>
+    <path class="lt" d="M78 96 H288 M78 112 H288"/>
+    <rect x="70" y="128" width="226" height="118" rx="10" class="dk ln"/>
+    <rect x="86" y="140" width="38" height="56" rx="6" class="ik" stroke="var(--on-ink-muted)" stroke-width="2"/>
+      <g class="piston" style="animation-delay:0s"><rect x="90" y="146" width="30" height="24" rx="4" class="ac"/>
+      <path class="ln" stroke-width="5" d="M105 170 V196"/></g><rect x="138" y="140" width="38" height="56" rx="6" class="ik" stroke="var(--on-ink-muted)" stroke-width="2"/>
+      <g class="piston" style="animation-delay:0.45s"><rect x="142" y="146" width="30" height="24" rx="4" class="ac"/>
+      <path class="ln" stroke-width="5" d="M157 170 V196"/></g><rect x="190" y="140" width="38" height="56" rx="6" class="ik" stroke="var(--on-ink-muted)" stroke-width="2"/>
+      <g class="piston" style="animation-delay:0.15s"><rect x="194" y="146" width="30" height="24" rx="4" class="ac"/>
+      <path class="ln" stroke-width="5" d="M209 170 V196"/></g><rect x="242" y="140" width="38" height="56" rx="6" class="ik" stroke="var(--on-ink-muted)" stroke-width="2"/>
+      <g class="piston" style="animation-delay:0.6s"><rect x="246" y="146" width="30" height="24" rx="4" class="ac"/>
+      <path class="ln" stroke-width="5" d="M261 170 V196"/></g>
+    <path class="dk ln" d="M84 246 L96 284 Q100 292 110 292 L256 292 Q266 292 270 284 L282 246"/>
+    <path class="as blink" stroke-width="3" style="animation-delay:0s" d="M105 66 l-6 -14 M105 66 l6 -14"/><path class="as blink" stroke-width="3" style="animation-delay:0.3s" d="M157 66 l-6 -14 M157 66 l6 -14"/><path class="as blink" stroke-width="3" style="animation-delay:0.6s" d="M209 66 l-6 -14 M209 66 l6 -14"/><path class="as blink" stroke-width="3" style="animation-delay:0.8999999999999999s" d="M261 66 l-6 -14 M261 66 l6 -14"/>
+    <circle cx="340" cy="92" r="20" class="dk ln"/>
+    <g class="spin" style="transform-origin:345px 214px"><circle cx="345" cy="214" r="34" class="dk ln"/>
+      <path class="as" stroke-width="6" d="M345 186 V242 M317 214 H373"/></g>
+    <circle cx="345" cy="214" r="9" class="ac"/></svg></div>
   <div class="wrap">
     <div class="hero-top">
       <span>Алматы · Алатауский район</span>
@@ -555,9 +601,10 @@ html { scroll-behavior: auto; }
       </div>
     </div>
     <div class="hero-main">
-      <p class="kicker">Автосервис</p>
+      <p class="kicker">Ремонт двигателей</p>
       <h1 class="display" style="--fit:3">AMC</h1>
-      <p class="lead">Двигатели бензиновые и дизельные, ходовая, выхлоп и компьютерная диагностика. Работают без выходных до 21:00.</p>
+      <p class="lead">Бензиновые и дизельные двигатели, выхлопные системы, ходовая и компьютерная диагностика. Работают без выходных до 21:00.</p>
+      <ul class="dirs"><li>Двигатели</li><li>Выхлоп</li><li>Ходовая</li><li>Диагностика</li></ul>
       <p class="status" data-status hidden></p>
       <a class="phone-big display" href="tel:+77081767232">+7 708 176-72-32</a>
       <div class="actions">
@@ -571,7 +618,7 @@ html { scroll-behavior: auto; }
 
 
 <div class="ticker" aria-hidden="true">
-  <div class="ticker-track" style="--dur:66s"><span>Ремонт бензиновых двигателей</span><span>Ремонт дизельных двигателей</span><span>Ремонт ходовой части</span><span>Ремонт выхлопных систем</span><span>Компьютерная диагностика</span><span>Ремонт бензиновых двигателей</span><span>Ремонт дизельных двигателей</span><span>Ремонт ходовой части</span><span>Ремонт выхлопных систем</span><span>Компьютерная диагностика</span><span>Ремонт бензиновых двигателей</span><span>Ремонт дизельных двигателей</span><span>Ремонт ходовой части</span><span>Ремонт выхлопных систем</span><span>Компьютерная диагностика</span><span>Ремонт бензиновых двигателей</span><span>Ремонт дизельных двигателей</span><span>Ремонт ходовой части</span><span>Ремонт выхлопных систем</span><span>Компьютерная диагностика</span></div>
+  <div class="ticker-track" style="--dur:108s"><span>Ремонт бензиновых двигателей</span><span>Ремонт дизельных двигателей</span><span>Ремонт двигателей</span><span>Ремонт выхлопных систем</span><span>Тюнинг выхлопной системы</span><span>Тюнинг</span><span>Ремонт ходовой части</span><span>Проточка тормозных дисков</span><span>Ремонт электронных систем</span><span>Компьютерная диагностика</span><span>Ремонт бензиновых двигателей</span><span>Ремонт дизельных двигателей</span><span>Ремонт двигателей</span><span>Ремонт выхлопных систем</span><span>Тюнинг выхлопной системы</span><span>Тюнинг</span><span>Ремонт ходовой части</span><span>Проточка тормозных дисков</span><span>Ремонт электронных систем</span><span>Компьютерная диагностика</span><span>Ремонт бензиновых двигателей</span><span>Ремонт дизельных двигателей</span><span>Ремонт двигателей</span><span>Ремонт выхлопных систем</span><span>Тюнинг выхлопной системы</span><span>Тюнинг</span><span>Ремонт ходовой части</span><span>Проточка тормозных дисков</span><span>Ремонт электронных систем</span><span>Компьютерная диагностика</span><span>Ремонт бензиновых двигателей</span><span>Ремонт дизельных двигателей</span><span>Ремонт двигателей</span><span>Ремонт выхлопных систем</span><span>Тюнинг выхлопной системы</span><span>Тюнинг</span><span>Ремонт ходовой части</span><span>Проточка тормозных дисков</span><span>Ремонт электронных систем</span><span>Компьютерная диагностика</span></div>
 </div>
 
 
@@ -589,11 +636,26 @@ html { scroll-behavior: auto; }
 
 <main>
 
+<section class="about" id="about">
+  <div class="wrap about-grid">
+    <div>
+      <h2 class="display">О сервисе</h2>
+      <p class="about-text">AMC находится на улице Подвойского в Алатауском районе Алматы, остановка «Ашимова» в 300 метрах. Мастера ремонтируют бензиновые и дизельные двигатели, выхлопные системы и ходовую часть, делают компьютерную диагностику и электронику. Работают каждый день с 10:00 до 21:00.</p>
+    </div>
+    
+    <dl class="about-facts">
+      <div><dt>Рейтинг</dt><dd>5,0 по 53 оценкам в 2ГИС</dd></div><div><dt>Остановка</dt><dd>«Ашимова», 300 м</dd></div><div><dt>Режим</dt><dd>Ежедневно, 10:00-21:00</dd></div><div><dt>Оплата</dt><dd>Наличные, перевод с карты</dd></div>
+    </dl>
+    
+  </div>
+</section>
+
+
 <section class="services" id="services">
   <div class="wrap">
     <h2 class="display">Услуги</h2>
     <ul class="services-list">
-      <li><span class="svc-name">Ремонт бензиновых двигателей</span></li><li><span class="svc-name">Ремонт дизельных двигателей</span></li><li><span class="svc-name">Ремонт ходовой части</span></li><li><span class="svc-name">Ремонт выхлопных систем</span></li><li><span class="svc-name">Компьютерная диагностика</span></li>
+      <li><span class="svc-name">Ремонт бензиновых двигателей</span></li><li><span class="svc-name">Ремонт дизельных двигателей</span></li><li><span class="svc-name">Ремонт двигателей<span class="svc-text">Шлифовка, расточка, гильзовка, опрессовка</span></span></li><li><span class="svc-name">Ремонт выхлопных систем</span></li><li><span class="svc-name">Тюнинг выхлопной системы</span></li><li><span class="svc-name">Тюнинг</span></li><li><span class="svc-name">Ремонт ходовой части</span></li><li><span class="svc-name">Проточка тормозных дисков</span></li><li><span class="svc-name">Ремонт электронных систем</span></li><li><span class="svc-name">Компьютерная диагностика</span></li>
     </ul>
     <p class="price-note"><span>Цена зависит от машины и объёма работ. Назовём по телефону: <a href="tel:+77081767232">+7 708 176-72-32</a></span></p>
   </div>
@@ -605,7 +667,7 @@ html { scroll-behavior: auto; }
   <div class="wrap">
     <h2 class="display">За что хвалят</h2>
     <ol class="praise-list">
-      <li><h3>Честно о поломке</h3><p>Мастера объясняют, что не так, и не добавляют лишних работ.</p></li><li><h3>Компьютерная диагностика</h3><p>Отдельно отмечают диагностику на компьютере.</p></li><li><h3>Быстро</h3><p>Двигатель и глушитель делают без затяжек.</p></li>
+      <li><h3>Честно о поломке</h3><p>Мастера объясняют, что не так, и не добавляют лишних работ.</p></li><li><h3>Компьютерная диагностика</h3><p>Отдельно отмечают диагностику на компьютере.</p></li><li><h3>Быстро</h3><p>Ремонт двигателя и глушителя делают быстро.</p></li>
     </ol>
   </div>
 </section>
@@ -749,7 +811,7 @@ html { scroll-behavior: auto; }
       <label class="fld"><span>Машина</span><input name="car" placeholder="Марка, модель, год"></label>
       
       <label class="fld"><span>Что нужно</span>
-        <select name="service"><option value="">Выберите услугу</option><option>Ремонт бензиновых двигателей</option><option>Ремонт дизельных двигателей</option><option>Ремонт ходовой части</option><option>Ремонт выхлопных систем</option><option>Компьютерная диагностика</option><option>Другое, расскажу по телефону</option></select>
+        <select name="service"><option value="">Выберите услугу</option><option>Ремонт бензиновых двигателей</option><option>Ремонт дизельных двигателей</option><option>Ремонт двигателей</option><option>Ремонт выхлопных систем</option><option>Тюнинг выхлопной системы</option><option>Тюнинг</option><option>Ремонт ходовой части</option><option>Проточка тормозных дисков</option><option>Ремонт электронных систем</option><option>Компьютерная диагностика</option><option>Другое, расскажу по телефону</option></select>
       </label>
       
       <div class="slots" data-slots hidden>
