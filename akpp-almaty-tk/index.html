@@ -433,8 +433,25 @@ color: var(--accent-ink);
 .cta .btn-primary { background: var(--ink); color: var(--on-ink); }
 .cta .btn-ghost { color: var(--on-accent); }
 .cta .actions { max-width: 460px; }
-.demo { background: var(--ink); color: var(--on-ink-muted); font-size: 14px; padding: 28px 0 32px; }
-.demo p { margin: 0; max-width: 70ch; }
+.cta-grid { display: grid; gap: 24px; align-items: center; }
+.cta-body { text-align: center; }
+.cta-body p { margin-left: auto; margin-right: auto; }
+.cta-body .actions { margin: 0 auto; }
+.cta h2::after { margin-left: auto; margin-right: auto; }
+.cta-art {
+order: -1; max-width: 240px; width: 100%; margin: 0 auto;
+--accent: var(--ink); --on-ink: var(--ink); --on-ink-muted: color-mix(in srgb, var(--ink) 55%, transparent);
+}
+.cta-art .pulse, .cta-art .rise, .cta-art .bg { display: none; }
+.cta-art .art-svg .dk, .cta-art .art-svg .dk.ln { fill: color-mix(in srgb, var(--ink) 12%, transparent); }
+.cta-art .art-svg .ik { fill: color-mix(in srgb, var(--ink) 18%, transparent); }
+.cta-art ellipse[fill="#000"] { opacity: .12; }
+@media (min-width: 900px) {
+.cta-grid { grid-template-columns: 1fr 1fr; gap: 48px; }
+.cta-art { order: 0; max-width: 520px; }
+}
+.demo { background: var(--ink); color: var(--on-ink-muted); font-size: 14px; padding: 28px 0 32px; text-align: center; }
+.demo p { margin: 0 auto; max-width: 70ch; }
 .callbar {
 position: fixed; left: 0; right: 0; bottom: 0; z-index: 50;
 display: flex; gap: 8px; padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
@@ -714,14 +731,36 @@ html { scroll-behavior: auto; }
 </section>
 
 <section class="cta" id="cta">
-  <div class="wrap">
-    <h2 class="display">Проблема с коробкой?</h2>
-    <p>Позвоните или напишите в WhatsApp или Telegram, опишите симптомы.</p>
-    <a class="phone-big display" href="tel:+77019339130">+7 701 933-91-30</a>
-    <div class="actions">
-      <a class="btn btn-primary" href="tel:+77019339130">Позвонить</a>
-      <a class="btn btn-ghost" href="#cta" data-booking>Записаться онлайн</a>
+  <div class="wrap cta-grid">
+    <div class="cta-body">
+      <h2 class="display">Проблема с коробкой?</h2>
+      <p>Позвоните или напишите в WhatsApp или Telegram, опишите симптомы.</p>
+      <a class="phone-big display" href="tel:+77019339130">+7 701 933-91-30</a>
+      <div class="actions">
+        <a class="btn btn-primary" href="tel:+77019339130">Позвонить</a>
+        <a class="btn btn-ghost" href="#cta" data-booking>Записаться онлайн</a>
+      </div>
     </div>
+    <div class="cta-art" aria-hidden="true"><svg class="art-svg art-akpp" viewBox="0 0 400 320" preserveAspectRatio="xMidYMid meet" role="img" aria-hidden="true">
+  <defs>
+    <radialGradient id="glow-cta"><stop offset="0" style="stop-color:var(--accent);stop-opacity:.34"/><stop offset=".55" style="stop-color:var(--accent);stop-opacity:.08"/><stop offset="1" style="stop-color:var(--accent);stop-opacity:0"/></radialGradient>
+    <linearGradient id="artBody" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:color-mix(in srgb, var(--on-ink) 16%, var(--ink-2))"/><stop offset="1" style="stop-color:var(--ink)"/></linearGradient>
+  </defs>
+  <circle cx="220" cy="160" r="190" fill="url(#glow-cta)" class="pulse"/>
+  <ellipse cx="200" cy="300" rx="170" ry="12" fill="#000" opacity=".35"/>
+  <circle cx="40" cy="250" r="2.4" class="ac rise" style="animation-delay:0s"/><circle cx="90" cy="60" r="2.4" class="ac rise" style="animation-delay:1.6s"/><circle cx="360" cy="40" r="2.4" class="ac rise" style="animation-delay:3.1s"/><circle cx="380" cy="220" r="2.4" class="ac rise" style="animation-delay:0.8s"/><circle cx="20" cy="140" r="2.4" class="ac rise" style="animation-delay:2.4s"/><circle cx="300" cy="300" r="2.4" class="ac rise" style="animation-delay:4s"/>
+    <g style="color:var(--accent)"><g class="spin" style="transform-origin:160px 180px">
+    <circle cx="160" cy="180" r="108" fill="none" stroke="currentColor" stroke-width="28" stroke-dasharray="16.96 13.88"/>
+    <circle cx="160" cy="180" r="95" class="dk" stroke="currentColor" stroke-width="4"/>
+    <circle cx="160" cy="180" r="30.240000000000002" fill="none" stroke="currentColor" stroke-width="4"/>
+    <circle cx="222.6" cy="180.0" r="10.8" class="ac"/><circle cx="160.0" cy="242.6" r="10.8" class="ac"/><circle cx="97.4" cy="180.0" r="10.8" class="ac"/><circle cx="160.0" cy="117.4" r="10.8" class="ac"/>
+  </g></g>
+    <g style="color:var(--on-ink)"><g class="spin-r" style="transform-origin:318px 74px">
+    <circle cx="318" cy="74" r="62" fill="none" stroke="currentColor" stroke-width="20" stroke-dasharray="16.48 13.48"/>
+    <circle cx="318" cy="74" r="53" class="dk" stroke="currentColor" stroke-width="4"/>
+    <circle cx="318" cy="74" r="17.360000000000003" fill="none" stroke="currentColor" stroke-width="4"/>
+    <circle cx="354.0" cy="74.0" r="6.2" class="ac"/><circle cx="318.0" cy="110.0" r="6.2" class="ac"/><circle cx="282.0" cy="74.0" r="6.2" class="ac"/><circle cx="318.0" cy="38.0" r="6.2" class="ac"/>
+  </g></g></svg></div>
   </div>
 </section>
 </main>
