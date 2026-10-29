@@ -188,7 +188,7 @@ background: linear-gradient(180deg, rgba(0,0,0,.45) 0%, rgba(0,0,0,0) 22%, rgba(
 .no-photo .wrap { position: static; }
 .no-photo .hero-main { position: relative; z-index: 2; margin-top: 0; padding-top: 0; }
 .no-photo .hero-top { position: absolute; z-index: 2; top: 0; left: 0; right: 0; padding: 18px 20px; }
-.hero-art { position: relative; z-index: 1; height: 38vh; height: 38svh; min-height: 230px; max-height: 360px; margin: 48px 0 12px; }
+.hero-art { position: relative; z-index: 1; height: 40vh; height: 40svh; min-height: 250px; max-height: 380px; margin: 52px 0 8px; }
 .art-svg { width: 100%; height: 100%; overflow: visible; }
 .hero-art .art-svg {
 transform: translateY(calc(var(--sp, 0) * -50px)) scale(calc(1 - var(--sp, 0) * .1)) rotate(calc(var(--sp, 0) * -3deg));
@@ -238,11 +238,37 @@ will-change: transform;
 @keyframes sweep { to { transform: translateX(-60px); } }
 @media (min-width: 900px) {
 .hero.no-photo { padding: 28px 0 56px; min-height: calc(100vh - 46px); min-height: calc(100svh - 46px); }
-.no-photo .wrap { position: relative; }
+.no-photo .wrap { position: relative; max-width: none; padding: 0 clamp(28px, 5vw, 110px); }
 .no-photo .hero-top { position: static; padding: 0; }
-.no-photo .hero-main { margin-top: auto; padding-top: 48px; max-width: 560px; }
-.hero-art { position: absolute; top: 50%; right: 2%; width: 46%; height: auto; max-height: none; min-height: 0; margin: 0; transform: translateY(-50%); }
+.no-photo .hero-main { margin: auto 0; padding: 32px 0 32px 28px; max-width: min(48vw, 760px); border-left-width: 5px; }
+.no-photo h1 { font-size: clamp(60px, calc(min(44vw, 700px) / (var(--fit, 8) * .6)), 176px); }
+.no-photo .kicker { font-size: 15px; margin-bottom: 18px; }
+.no-photo .lead { font-size: clamp(19px, 1.35vw, 24px); max-width: 36ch; margin-top: 22px; }
+.no-photo .status { font-size: 15px; margin-top: 26px; }
+.no-photo .phone-big { font-size: clamp(44px, 3.6vw, 68px); margin: 24px 0 22px; }
+.no-photo .actions { max-width: 560px; gap: 14px; }
+.no-photo .actions .btn { min-height: 62px; font-size: 18px; }
+.hero-art { position: absolute; top: 50%; right: 5vw; width: 44vw; max-width: 860px; height: auto; max-height: none; min-height: 0; margin: 0; transform: translateY(-46%); }
 .art-svg { height: auto; }
+}
+@media (min-width: 900px) and (max-width: 1499px) {
+.no-photo .hero-main { max-width: 44vw; }
+.hero-art { right: 3vw; width: 42vw; }
+}
+@media (min-width: 1500px) {
+.no-photo .hero-main { max-width: min(44vw, 760px); }
+.hero-art { right: 5vw; width: 40vw; }
+}
+@media (min-width: 900px) and (max-height: 900px) {
+.hero.no-photo { padding: 20px 0 28px; }
+.no-photo .hero-main { padding-top: 16px; padding-bottom: 16px; }
+.no-photo h1 { font-size: min(clamp(60px, calc(min(44vw, 700px) / (var(--fit, 8) * .6)), 176px), 14vh); }
+.no-photo .kicker { margin-bottom: 10px; }
+.no-photo .lead { margin-top: 14px; font-size: clamp(17px, 2.2vh, 21px); }
+.no-photo .status { margin-top: 16px; }
+.no-photo .phone-big { font-size: clamp(34px, 5.6vh, 60px); margin: 12px 0 12px; }
+.no-photo .actions .btn { min-height: 54px; }
+.no-photo .wa-link { margin-top: 10px; }
 }
 .ticker { overflow: hidden; background: var(--accent); color: var(--on-accent); border-block: 2px solid var(--ink); }
 .ticker-track { display: flex; width: max-content; animation: run var(--dur, 38s) linear infinite; }
@@ -514,16 +540,18 @@ html { scroll-behavior: auto; }
   <circle cx="220" cy="160" r="190" fill="url(#glow-a)" class="pulse"/>
   <ellipse cx="200" cy="300" rx="170" ry="12" fill="#000" opacity=".35"/>
   <circle cx="40" cy="250" r="2.4" class="ac rise" style="animation-delay:0s"/><circle cx="90" cy="60" r="2.4" class="ac rise" style="animation-delay:1.6s"/><circle cx="360" cy="40" r="2.4" class="ac rise" style="animation-delay:3.1s"/><circle cx="380" cy="220" r="2.4" class="ac rise" style="animation-delay:0.8s"/><circle cx="20" cy="140" r="2.4" class="ac rise" style="animation-delay:2.4s"/><circle cx="300" cy="300" r="2.4" class="ac rise" style="animation-delay:4s"/>
-    <rect x="40" y="220" width="210" height="54" rx="27" class="dk ln"/>
-      <path class="as" stroke-width="5" d="M70 230 v34 M91 230 v34 M112 230 v34 M133 230 v34 M154 230 v34 M175 230 v34 M196 230 v34 M217 230 v34"/><rect x="40" y="162" width="210" height="54" rx="27" class="dk ln"/>
-      <path class="as" stroke-width="5" d="M70 172 v34 M91 172 v34 M112 172 v34 M133 172 v34 M154 172 v34 M175 172 v34 M196 172 v34 M217 172 v34"/><rect x="40" y="104" width="210" height="54" rx="27" class="dk ln"/>
-      <path class="as" stroke-width="5" d="M70 114 v34 M91 114 v34 M112 114 v34 M133 114 v34 M154 114 v34 M175 114 v34 M196 114 v34 M217 114 v34"/>
-    <circle cx="318" cy="196" r="70" class="dk ln"/>
-  <circle cx="318" cy="196" r="60.199999999999996" class="lt" stroke-dasharray="4 7"/>
-  <g class="spin" style="transform-origin:318px 196px">
-    <circle cx="318" cy="196" r="46.2" class="ln"/><path d="M318 196 L361.4 196.0" class="as" stroke-width="6.3"/><path d="M318 196 L331.4 237.3" class="as" stroke-width="6.3"/><path d="M318 196 L282.9 221.5" class="as" stroke-width="6.3"/><path d="M318 196 L282.9 170.5" class="as" stroke-width="6.3"/><path d="M318 196 L331.4 154.7" class="as" stroke-width="6.3"/>
-    <circle cx="318" cy="196" r="9.8" class="ac"/>
-  </g></svg></div>
+    <rect x="226" y="256" width="160" height="40" rx="20" class="dk ln"/>
+      <path class="as" stroke-width="4" d="M248 264 v24 M270 264 v24 M292 264 v24 M314 264 v24 M336 264 v24 M358 264 v24"/><rect x="226" y="212" width="160" height="40" rx="20" class="dk ln"/>
+      <path class="as" stroke-width="4" d="M248 220 v24 M270 220 v24 M292 220 v24 M314 220 v24 M336 220 v24 M358 220 v24"/>
+    <circle cx="170" cy="168" r="122" class="dk ln" stroke-width="5"/>
+    <circle cx="170" cy="168" r="108" fill="none" stroke="var(--on-ink-muted)" stroke-width="18" stroke-dasharray="10 9"/>
+    <circle cx="170" cy="168" r="92" class="ik"/>
+    <g class="spin" style="transform-origin:170px 168px">
+      <circle cx="170" cy="168" r="74" class="ln"/>
+      <path class="as" stroke-width="12" transform="rotate(0 170 168)" d="M170 150 L170 100"/><path class="as" stroke-width="12" transform="rotate(72 170 168)" d="M170 150 L170 100"/><path class="as" stroke-width="12" transform="rotate(144 170 168)" d="M170 150 L170 100"/><path class="as" stroke-width="12" transform="rotate(216 170 168)" d="M170 150 L170 100"/><path class="as" stroke-width="12" transform="rotate(288 170 168)" d="M170 150 L170 100"/>
+      <circle class="ac" transform="rotate(36 170 168)" cx="170" cy="140" r="5"/><circle class="ac" transform="rotate(108 170 168)" cx="170" cy="140" r="5"/><circle class="ac" transform="rotate(180 170 168)" cx="170" cy="140" r="5"/><circle class="ac" transform="rotate(252 170 168)" cx="170" cy="140" r="5"/><circle class="ac" transform="rotate(324 170 168)" cx="170" cy="140" r="5"/>
+    </g>
+    <circle cx="170" cy="168" r="18" class="ac"/></svg></div>
   <div class="wrap">
     <div class="hero-top">
       <span>село Отеген Батыра · Илийский район</span>
