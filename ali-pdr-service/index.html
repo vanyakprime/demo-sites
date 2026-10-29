@@ -157,12 +157,21 @@ background: color-mix(in srgb, var(--accent) 10%, transparent);
 .about { padding-bottom: 24px; }
 .about-grid { display: grid; gap: 28px; }
 .about-text { margin: 0; font-size: 18px; line-height: 1.6; max-width: 60ch; }
-.about-facts { margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-.about-facts div { background: var(--paper-2); border-radius: 6px; padding: 14px 16px; }
-.about-facts dt { font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--accent-ink); margin-bottom: 6px; }
-.about-facts dd { margin: 0; font-weight: 600; font-size: 15px; line-height: 1.4; }
+.about-facts { margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.about-facts div {
+position: relative; overflow: hidden; background: var(--paper-2); border-radius: 10px; padding: 20px 18px 22px;
+border-top: 4px solid var(--accent); transition: transform .2s ease;
+}
+.about-facts dt { font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--accent-ink); margin-bottom: 10px; }
+.about-facts dd { margin: 0; font-weight: 700; font-size: 17px; line-height: 1.35; }
+@media (hover: hover) { .about-facts div:hover { transform: translateY(-3px); } }
+@media (max-width: 899px) { .about-facts div:last-child:nth-child(odd) { grid-column: 1 / -1; } }
 @media (min-width: 900px) {
-.about-grid { grid-template-columns: 1.1fr 1fr; gap: 56px; align-items: start; }
+.about .wrap { max-width: 1280px; }
+.about-grid { grid-template-columns: minmax(0, .85fr) minmax(0, 1.4fr); gap: 56px; align-items: center; }
+.about-facts { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 1fr; gap: 14px; }
+.about-facts div { min-height: 150px; padding: 24px 20px; display: flex; flex-direction: column; justify-content: space-between; }
+.about-facts dd { font-size: 19px; }
 .services-list { columns: 2; column-gap: 48px; }
 .services-list li { break-inside: avoid; }
 }
@@ -640,7 +649,7 @@ html { scroll-behavior: auto; }
   <div class="wrap about-grid">
     <div>
       <h2 class="display">О сервисе</h2>
-      <p class="about-text">Ali_Pdr_service принимает на улице Жамбыла в Алмалинском районе Алматы. Главное направление - удаление вмятин без покраски, к нему добавляются кузовной ремонт, покраска, полировка, сварка и восстановление геометрии. Есть также детейлинг, тюнинг и работа с автостёклами. Открыто каждый день до полуночи.</p>
+      <p class="about-text">Мы принимаем на улице Жамбыла в Алмалинском районе Алматы. Главное направление - удаление вмятин без покраски, к нему добавляются кузовной ремонт, покраска, полировка, сварка и восстановление геометрии. Есть также детейлинг, тюнинг и работа с автостёклами. Открыты каждый день до полуночи.</p>
     </div>
     
     <dl class="about-facts">
